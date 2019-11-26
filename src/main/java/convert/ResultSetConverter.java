@@ -34,6 +34,7 @@ public class ResultSetConverter {
                 }
             }
           // System.out.println(json);
+            // System.out.println(json);
             json.put(obj);
         }
          resultSet = statement.executeQuery("select * from SYS_ROLE");
