@@ -16,7 +16,7 @@ public class ResultSetConverter {
 
         ResultSet resultSet = statement.executeQuery("select * from NPA_RF");
         ResultSet resultSet1 = statement.executeQuery("select * from SYS_ROLE");
-
+        ResultSet resultSet3 = statement.executeQuery("select * from LAWYERS");
 
         JSONArray json = new JSONArray();
         ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
