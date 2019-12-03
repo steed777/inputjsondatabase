@@ -31,11 +31,11 @@ public class ResultSetConverter {
            resultSet = statement.executeQuery(sql.get(j));
            ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
            int numColumns = resultSetMetaData.getColumnCount();
-        json = new JSONArray();
+        //json = new JSONArray();
 
            while (resultSet.next()) {
                obj = new JSONObject();
-
+               json = new JSONArray();
                for (int i = 1; i < numColumns + 1; i++) {
                    String column_name = resultSetMetaData.getColumnName(i);
                    if (resultSetMetaData.getColumnType(i) == java.sql.Types.BIGINT) {
@@ -47,9 +47,9 @@ public class ResultSetConverter {
                    }
                }
                json.put(obj);
+               System.out.println(json);
            }
-           System.out.println(json);
-       }
+        }
         return json;
     }
 }
